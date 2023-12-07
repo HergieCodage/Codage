@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <title>Changement de couleur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <style>
+        .green {
+            background-color: green;
+        }
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container text-center py-5">
+            <h2>Changement de couleur</h2>
+            <button id="homme">Homme</button>
+            <button id="femme">Femme</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // var sexe;
+        const homme = document.getElementById("homme")
+        const femme = document.getElementById("femme")
+
+        homme.addEventListener('click', () => {
+            const color = homme.classList
+            
+            if (color.contains('green')) {
+                homme.classList.remove('green')
+                femme.classList.remove('red')
+                homme.classList.add('red')
+                femme.classList.add('green')                           
+            } else if (color.contains('red')) {
+                homme.classList.remove('red')
+                femme.classList.remove('green')
+                homme.classList.add('green')
+                femme.classList.add('red')
+            } else {
+                homme.classList.add('green')
+                femme.classList.add('red')
+            }
+        })
+
+        femme.addEventListener('click', () => {
+            const color = femme.classList
+            
+            if (color.contains('green')) {
+                femme.classList.remove('green')
+                homme.classList.remove('red')
+                femme.classList.add('red')
+                homme.classList.add('green')                           
+            } else if (color.contains('red')) {
+                femme.classList.remove('red')
+                homme.classList.remove('green')
+                femme.classList.add('green')
+                homme.classList.add('red')
+            } else {
+                femme.classList.add('green')
+                homme.classList.add('red')
+            }
+        })
+
+
+
+    // console.log(sexe);
+
+    </script>
+</body>
